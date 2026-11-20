@@ -10,7 +10,7 @@ public class Collectible : MonoBehaviour
     {
         if (!other.CompareTag(playerTag)) return;
 
-        //if (ScoreCounter.Instance != null) ScoreCounter.Instance.Add(value);
+        if (ScoreCounter.Instance != null) ScoreCounter.Instance.Add(value);
         if (pickupSfx != null) AudioSource.PlayClipAtPoint(pickupSfx, transform.position);
         Destroy(gameObject);
     }
