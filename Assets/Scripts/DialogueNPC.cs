@@ -17,6 +17,7 @@ public class DialogueNPC : MonoBehaviour
     public TMP_Text lineText;
  
     public UnityEvent onDialogueEnd;
+    public UnityEvent onDialogueStart;
  
     string[] currentLines;
     int index;
@@ -67,6 +68,7 @@ public class DialogueNPC : MonoBehaviour
         if (dialoguePanel != null) dialoguePanel.SetActive(true);
         if (nameText != null) nameText.text = npcName;
         if (lineText != null) lineText.text = currentLines[index];
+        onDialogueStart.Invoke();
     }
  
     public void NextLine()
